@@ -112,8 +112,8 @@
 			"Rev": "845982030542a0fd9c8e8cbf76a84c7482cb3755"
 		},
 		{
-			"ImportPath": "gopkg.in/libgit2/git2go.v22",
-			"Rev": "41ad00f868e7dfcdb04c7538f27350d400f710a3"
+			"ImportPath": "gopkg.in/libgit2/git2go.v23",
+			"Rev": "6d3a3499f1639a6272e334f9f74b1e0cf6b0bb49"
 		}
 	]
 }

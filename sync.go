@@ -4,10 +4,11 @@ import (
 	"encoding/hex"
 	"log"
 
+	"github.com/pipeviz/pvgit/Godeps/_workspace/src/gopkg.in/libgit2/git2go.v23"
+
 	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/pipeviz/pipeviz/ingest"
 	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/pipeviz/pipeviz/types/semantic"
 	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/spf13/cobra"
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/gopkg.in/libgit2/git2go.v22"
 )
 
 type syncCmd struct {

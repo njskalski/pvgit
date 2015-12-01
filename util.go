@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/gopkg.in/libgit2/git2go.v22"
+	"github.com/pipeviz/pvgit/Godeps/_workspace/src/gopkg.in/libgit2/git2go.v23"
 )
 
 // The (version of?) the RFC2822 format git uses to format its date output,
@@ -28,22 +28,22 @@ func GetRepoIdent(repo *git.Repository) (r string, err error) {
 	var remote *git.Remote
 
 	// try origin & upstream, return that if it's there
-	if remote, err = repo.LookupRemote("origin"); err == nil {
+	if remote, err = repo.Remotes.Lookup("origin"); err == nil {
 		r = remote.Url()
 		return
-	} else if remote, err = repo.LookupRemote("upstream"); err == nil {
+	} else if remote, err = repo.Remotes.Lookup("upstream"); err == nil {
 		r = remote.Url()
 		return
 	}
 
 	var remotes []string
-	if remotes, err = repo.ListRemotes(); err != nil {
+	if remotes, err = repo.Remotes.List(); err != nil {
 		return
 	}
 
 	// otherwise, just grab the first in the list
 	for _, rname := range remotes {
-		remote, err = repo.LookupRemote(rname)
+		remote, err = repo.Remotes.Lookup(rname)
 		if err != nil {
 			return "", err
 		}
