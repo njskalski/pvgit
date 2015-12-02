@@ -6,8 +6,8 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/kardianos/osext"
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/spf13/cobra"
+	"github.com/kardianos/osext"
+	"github.com/spf13/cobra"
 )
 
 type instrumentCmd struct {
