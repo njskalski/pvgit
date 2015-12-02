@@ -3,15 +3,16 @@ package main
 import (
 	"log"
 
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/pipeviz/pipeviz/ingest"
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/spf13/cobra"
+	"github.com/pipeviz/pipeviz/ingest"
+	"github.com/spf13/cobra"
 )
 
 func postCommitHookCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "hook-post-commit",
-		Short: "Processes a git post-commit hook event.",
-		Run:   runPostCommit,
+		Use:    "hook-post-commit",
+		Short:  "Processes a git post-commit hook event.",
+		Run:    runPostCommit,
+		Hidden: true,
 	}
 
 	return cmd

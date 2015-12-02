@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/pipeviz/pipeviz/ingest"
-	"github.com/pipeviz/pvgit/Godeps/_workspace/src/github.com/spf13/cobra"
+	"github.com/pipeviz/pipeviz/ingest"
+	"github.com/spf13/cobra"
 )
 
 func postCheckoutHookCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "hook-post-checkout",
-		Short: "Processes a git post-checkout hook event.",
-		Run:   runPostCheckout,
+		Use:    "hook-post-checkout",
+		Short:  "Processes a git post-checkout hook event.",
+		Run:    runPostCheckout,
+		Hidden: true,
 	}
 
 	return cmd
