@@ -5,6 +5,6 @@ deps:
 	glide -q -y glide.yaml up
 
 install:
-	go install -ldflags "-X github.com/pipeviz/pvgit/main.version=${VERSION}"
+	go install -ldflags "-X main.version=${VERSION}"
 
 .PHONY: deps install
