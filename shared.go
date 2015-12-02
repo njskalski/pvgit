@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"gopkg.in/libgit2/git2go.v23"
+	"github.com/libgit2/git2go"
 
 	"github.com/pipeviz/pipeviz/ingest"
 	"github.com/pipeviz/pipeviz/types/semantic"

@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 
-	"gopkg.in/libgit2/git2go.v23"
+	"github.com/libgit2/git2go"
 )
 
 // The (version of?) the RFC2822 format git uses to format its date output,

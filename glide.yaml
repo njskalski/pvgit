@@ -28,8 +28,8 @@ import:
   version: 4dbda5e2904d044d23cc4bef84e8360c458caf7f
 - package: github.com/unrolled/secure
   version: 9b725bb5ee80564334176a116a99dd926cab63a1
-- package: gopkg.in/libgit2/git2go.v23
-  version: 6d3a3499f1639a6272e334f9f74b1e0cf6b0bb49
+- package: github.com/libgit2/git2go
+  version: 22da351b1e470074df1ba3f4c872d0b64c6b2046
 - package: github.com/xeipuuv/gojsonschema
   version: 71b85f61a135e79143f3d3238d5175a4f29b6689
 - package: github.com/boltdb/bolt
