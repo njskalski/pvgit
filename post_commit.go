@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 
-	"github.com/pipeviz/pipeviz/ingest"
 	"github.com/spf13/cobra"
 )
 
@@ -36,7 +35,7 @@ func runPostCommit(cmd *cobra.Command, args []string) {
 		log.Fatalln("Failed to retrieve identifier for repository")
 	}
 
-	m := new(ingest.Message)
+	m := newMessage()
 	m.Add(commitToSemanticForm(commit, ident))
 
 	recordHead(m, repo)

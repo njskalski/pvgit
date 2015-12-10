@@ -15,7 +15,7 @@ import (
 
 	"github.com/libgit2/git2go"
 
-	"github.com/pipeviz/pipeviz/ingest"
+	"github.com/pipeviz/pipeviz/message"
 	"github.com/pipeviz/pipeviz/types/semantic"
 )
 
@@ -62,7 +62,7 @@ func commitToSemanticForm(in *git.Commit, ident string) (out semantic.Commit) {
 	return
 }
 
-func recordHead(m *ingest.Message, repo *git.Repository) {
+func recordHead(m *message.Message, repo *git.Repository) {
 	head, err := repo.Head()
 	if err != nil {
 		log.Fatalf("Could not get repo HEAD")
@@ -106,7 +106,7 @@ func recordHead(m *ingest.Message, repo *git.Repository) {
 	}
 }
 
-func sendMapToPipeviz(m *ingest.Message, r *git.Repository) {
+func sendMapToPipeviz(m *message.Message, r *git.Repository) {
 	addr, err := GetTargetAddr(r)
 	// Find the target pipeviz instance from the git config
 	if err != nil {
@@ -135,4 +135,12 @@ func sendMapToPipeviz(m *ingest.Message, r *git.Repository) {
 
 		log.Fatalln("Message rejected by pipeviz server: %v", string(bod))
 	}
+}
+
+func newMessage() *message.Message {
+	return message.New(message.Client{
+		Name:      "pvgit",
+		Version:   version,
+		Microtime: time.Now().UnixNano() / 1000,
+	})
 }

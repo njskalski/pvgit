@@ -6,7 +6,7 @@ import (
 
 	"github.com/libgit2/git2go"
 
-	"github.com/pipeviz/pipeviz/ingest"
+	"github.com/pipeviz/pipeviz/message"
 	"github.com/pipeviz/pipeviz/types/semantic"
 	"github.com/spf13/cobra"
 )
@@ -36,7 +36,7 @@ func syncHistory(repo *git.Repository, all bool) {
 	var err error
 	var ident string
 
-	msg := new(ingest.Message)
+	msg := newMessage()
 
 	if all {
 		ident, err = GetRepoIdent(repo)
@@ -63,7 +63,7 @@ func syncHistory(repo *git.Repository, all bool) {
 
 	for ref, err := iter.Next(); err == nil; ref, err = iter.Next() {
 		// in func for easy defer of Free()
-		func(r *git.Reference, m *ingest.Message) {
+		func(r *git.Reference, m *message.Message) {
 			//defer r.Free()
 			oid := r.Target()
 			if !r.IsBranch() && !r.IsTag() {
